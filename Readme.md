@@ -134,13 +134,13 @@ This second diagram decomposes the system into functional building blocks and em
 
 ### 🔄 Prompt Flow Logic Graph
 
-![Prompt Flow Execution Graph](assets/promptflow_graph.png)
+![Prompt Flow Execution Graph](assets/promptflow_graph.PNG)
 
 This is the real execution graph from **Azure Prompt Flow**, representing the internal logic and flow of our multi-agent system.
 
 #### 🔍 Key Observations:
 - The **inputs** are processed by the **Orchestrator**, which then dynamically decides which agent (recommendation, analytics, or support) should be activated.
-- Flows like `recommendation_context`, `competition_context`, and `property_products_state` provide structured data used by each agent.
+- Flows like `recommendation_context`, `competition_context` provide structured data used by each agent.
 - **Bypassed flows** (in gray) indicate unused branches based on query intent — showcasing Prompt Flow’s conditional logic capability.
 - **Only the necessary agent is triggered** at runtime, optimizing performance and cost.
 
