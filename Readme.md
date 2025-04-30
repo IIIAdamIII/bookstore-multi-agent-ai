@@ -132,6 +132,22 @@ This second diagram decomposes the system into functional building blocks and em
 
 ---
 
+### 🔄 Prompt Flow Logic Graph
+
+![Prompt Flow Execution Graph](assets/promptflow_graph.png)
+
+This is the real execution graph from **Azure Prompt Flow**, representing the internal logic and flow of our multi-agent system.
+
+#### 🔍 Key Observations:
+- The **inputs** are processed by the **Orchestrator**, which then dynamically decides which agent (recommendation, analytics, or support) should be activated.
+- Flows like `recommendation_context`, `competition_context`, and `property_products_state` provide structured data used by each agent.
+- **Bypassed flows** (in gray) indicate unused branches based on query intent — showcasing Prompt Flow’s conditional logic capability.
+- **Only the necessary agent is triggered** at runtime, optimizing performance and cost.
+
+This visual logic proves that Prompt Flow was not just used for chaining — it served as our **control layer**, enabling real-time decision making with zero manual API routing.
+
+---
+
 ## 🔍 Retrieval-Augmented Generation (RAG)
 
 This system adopts the **RAG paradigm** to ensure factual, real-time answers:
@@ -140,8 +156,8 @@ This system adopts the **RAG paradigm** to ensure factual, real-time answers:
 - GPT-4o then **generates a grounded response** based on this retrieved content — increasing **accuracy, trust, and explainability**.
 
 Benefits of this approach:
-- ✅ Reduces hallucinations
-- ✅ Incorporates live, domain-specific context
+- ✅ Reduces hallucinations  
+- ✅ Incorporates live, domain-specific context  
 - ✅ Enhances user trust through transparent reasoning
 
 ---
@@ -175,4 +191,4 @@ Benefits of this approach:
 ## 📌 Conclusion
 
 This multi-agent system reimagines how online bookstores operate by combining customer service, competitive analytics, and smart recommendations into one AI-powered experience.  
-By integrating cutting-edge Azure services and GPT-4o with a well-designed agentic framework, it delivers a scalable and intelligent e-commerce backbone ready for real-world deployment.
+By integrating cutting-edge Azure services, GPT-4o, and Prompt Flow orchestration with a well-designed agentic framework, it delivers a scalable, modular, and intelligent e-commerce foundation ready for real-world use.
